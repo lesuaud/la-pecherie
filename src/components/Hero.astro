@@ -1,0 +1,58 @@
+---
+---
+<!-- [À REMPLACER - photo terrasse du restaurant ou port d'Hourtin] -->
+<section
+  id="accueil"
+  class="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden"
+  style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80'); background-size: cover; background-position: center;"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(7,41,74,0.72) 0%, rgba(11,60,93,0.60) 60%, rgba(7,41,74,0.85) 100%);"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+    <!-- Compass -->
+    <div class="flex justify-center mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="50,4 55,44 96,50 55,56 50,96 45,56 4,50 45,44" fill="#10A0D0"/>
+        <polygon points="50,15 54,46 85,50 54,54 50,85 46,54 15,50 46,46" fill="#90D0F0" opacity="0.7"/>
+        <circle cx="50" cy="50" r="6" fill="#10A0D0"/>
+        <circle cx="50" cy="50" r="3" fill="white"/>
+      </svg>
+    </div>
+
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-3" style="font-family: 'Playfair Display', Georgia, serif;">
+      La Pêcherie
+    </h1>
+    <p class="text-xl sm:text-2xl text-[#90D0F0] font-light mb-2" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic;">
+      Bistrot poisson &amp; viande · Port d'Hourtin
+    </p>
+    <p class="text-base sm:text-lg text-gray-300 mb-10">
+      Au bord du lac d'Hourtin, en Gironde
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="#reservation"
+        class="inline-flex items-center justify-center gap-2 bg-[#E2603F] hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+      >
+        📞 Réserver une table
+      </a>
+      <a
+        href="#carte"
+        class="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#0B3C5D] font-semibold px-8 py-4 rounded-full text-base transition-all duration-200"
+      >
+        Voir la carte →
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll arrow -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+    <a href="#moules" aria-label="Défiler vers le bas">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </a>
+  </div>
+</section>

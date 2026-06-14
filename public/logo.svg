@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- Compass star -->
+  <polygon points="24,2 26.5,21 24,24 21.5,21" fill="#10A0D0"/>
+  <polygon points="24,46 26.5,27 24,24 21.5,27" fill="#10A0D0"/>
+  <polygon points="2,24 21,21.5 24,24 21,26.5" fill="#10A0D0"/>
+  <polygon points="46,24 27,21.5 24,24 27,26.5" fill="#10A0D0"/>
+  <polygon points="7.1,7.1 21.3,21.3 24,24 21.3,21.3" fill="#90D0F0"/>
+  <polygon points="40.9,40.9 26.7,26.7 24,24 26.7,26.7" fill="#90D0F0"/>
+  <polygon points="40.9,7.1 26.7,21.3 24,24 26.7,21.3" fill="#90D0F0"/>
+  <polygon points="7.1,40.9 21.3,26.7 24,24 21.3,26.7" fill="#90D0F0"/>
+  <!-- Diagonal arms -->
+  <polygon points="7.1,7.1 21,21 24,24 20,20.5" fill="#90D0F0"/>
+  <polygon points="40.9,40.9 27,27 24,24 28,27.5" fill="#90D0F0"/>
+  <polygon points="40.9,7.1 27,21 24,24 28,20.5" fill="#90D0F0"/>
+  <polygon points="7.1,40.9 21,27 24,24 20,27.5" fill="#90D0F0"/>
+  <circle cx="24" cy="24" r="3" fill="#0B3C5D"/>
+  <!-- Text -->
+  <text x="56" y="22" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#0B3C5D">La Pêcherie</text>
+  <text x="56" y="40" font-family="Arial, sans-serif" font-size="10" fill="#10A0D0" letter-spacing="1">BISTROT · PORT D'HOURTIN</text>
+</svg>

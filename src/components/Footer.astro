@@ -1,0 +1,83 @@
+---
+import config from '../data/config.json';
+---
+<footer style="background-color: #0B3C5D;" class="text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Logo + desc -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 100 100" aria-hidden="true">
+            <polygon points="50,4 55,44 96,50 55,56 50,96 45,56 4,50 45,44" fill="#10A0D0"/>
+            <polygon points="50,15 54,46 85,50 54,54 50,85 46,54 15,50 46,46" fill="#90D0F0" opacity="0.55"/>
+            <circle cx="50" cy="50" r="6" fill="#10A0D0"/>
+            <circle cx="50" cy="50" r="3" fill="white"/>
+          </svg>
+          <span class="text-xl font-bold" style="font-family: 'Playfair Display', Georgia, serif;">La Pêcherie</span>
+        </div>
+        <p class="text-[#90D0F0] text-sm leading-relaxed">Bistrot poisson &amp; viande au cœur du port d'Hourtin, en Gironde. Ouvert d'avril à octobre.</p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wide">Contact</h3>
+        <ul class="space-y-2 text-sm text-[#90D0F0]">
+          <li>
+            <a href={config.contact.telephoneHref} class="hover:text-white transition-colors">📞 {config.contact.telephone}</a>
+          </li>
+          <li>
+            <a href={`mailto:${config.contact.emailResa}`} class="hover:text-white transition-colors break-all">✉️ {config.contact.emailResa}</a>
+          </li>
+          <li class="pt-1">{config.contact.adresse}</li>
+          <li>{config.contact.codePostal} {config.contact.ville}</li>
+          <li class="pt-1">
+            <a href={config.contact.googleMapsLink} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">📍 Voir sur la carte</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div>
+        <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wide">Horaires</h3>
+        <ul class="space-y-2 text-sm text-[#90D0F0]">
+          <li><span class="text-white font-medium">Déjeuner :</span> 12h00 – 14h30</li>
+          <li><span class="text-white font-medium">Dîner :</span> 19h00 – 22h00</li>
+          <li class="pt-2"><span class="text-green-400 font-medium">Juil/Août :</span> 7j/7</li>
+          <li class="text-xs">Hors saison : fermé mar. soir et mer.</li>
+          <li class="pt-2 text-xs">Saison : avril à octobre</li>
+        </ul>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wide">Navigation</h3>
+        <ul class="space-y-2 text-sm text-[#90D0F0]">
+          <li><a href="#accueil" class="hover:text-white transition-colors">Accueil</a></li>
+          <li><a href="#moules" class="hover:text-white transition-colors">Nos Moules</a></li>
+          <li><a href="#etablissement" class="hover:text-white transition-colors">L'Établissement</a></li>
+          <li><a href="/carte" class="hover:text-white transition-colors">La Carte complète</a></li>
+          <li><a href="#galerie" class="hover:text-white transition-colors">Galerie</a></li>
+          <li><a href="#reservation" class="hover:text-white transition-colors">Réservation</a></li>
+          <li><a href="#traiteur" class="hover:text-white transition-colors">Traiteur</a></li>
+          <li><a href="#infos" class="hover:text-white transition-colors">Infos pratiques</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Allergens notice -->
+    <div class="border-t border-[#1a5277] pt-6 pb-6">
+      <p class="text-[#90D0F0] text-sm text-center">
+        🌾 <strong class="text-white">Liste des allergènes disponible sur demande</strong> — N'hésitez pas à interroger notre équipe.
+      </p>
+    </div>
+
+    <!-- Legal -->
+    <div class="border-t border-[#1a5277] pt-6 text-center">
+      <div class="text-xs text-[#6a9bb8] space-y-1">
+        <p>FBJL — SAS · SIREN : 987 613 890 · SIRET : 987 613 890 00019 · TVA : FR59 987 613 890</p>
+        <p>Siège social : 23 Résidence Babord, 33990 Hourtin</p>
+        <p class="mt-3">&copy; {new Date().getFullYear()} La Pêcherie — Tous droits réservés</p>
+      </div>
+    </div>
+  </div>
+</footer>

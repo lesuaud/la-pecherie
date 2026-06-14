@@ -1,0 +1,24 @@
+---
+import config from '../data/config.json';
+const { message, type } = config.bandeau;
+const bgClass = type === 'ouvert' ? 'bg-[#10A0D0]' : 'bg-[#0B3C5D]';
+---
+{config.bandeau.actif && (
+  <div id="bandeau" class={`${bgClass} text-white text-center py-2 px-4 text-sm font-medium relative`}>
+    <span id="bandeau-msg">{message}</span>
+    <button
+      id="bandeau-close"
+      aria-label="Fermer le bandeau"
+      class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-200 text-lg font-bold leading-none"
+    >×</button>
+  </div>
+)}
+<script>
+  const bandeau = document.getElementById('bandeau');
+  const closeBtn = document.getElementById('bandeau-close');
+  if (closeBtn && bandeau) {
+    closeBtn.addEventListener('click', () => {
+      bandeau.style.display = 'none';
+    });
+  }
+</script>

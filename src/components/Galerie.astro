@@ -1,0 +1,83 @@
+---
+const images = [
+  { src: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80', alt: 'Moules marinière La Pêcherie', caption: 'Nos moules' },
+  { src: 'https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=600&q=80', alt: 'Port d\'Hourtin vue depuis la terrasse', caption: 'Le port d\'Hourtin' },
+  { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80', alt: 'Ambiance restaurant La Pêcherie', caption: 'Notre restaurant' },
+  { src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80', alt: 'Fruits de mer frais', caption: 'Fruits de mer' },
+  { src: 'https://images.unsplash.com/photo-1510130387422-82bed34b37e9?w=600&q=80', alt: 'Poisson grillé frais du jour', caption: 'Poisson du jour' },
+  { src: 'https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=600&q=80', alt: 'Terrasse du restaurant face au lac', caption: 'Notre terrasse' },
+];
+---
+<!-- [PHOTOS À REMPLACER par les vraies photos du restaurant] -->
+<section id="galerie" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="inline-block bg-[#10A0D0] text-white text-xs font-semibold uppercase tracking-widest px-4 py-1 rounded-full mb-4">Photos</span>
+      <h2 class="text-4xl sm:text-5xl font-bold text-[#0B3C5D]" style="font-family: 'Playfair Display', Georgia, serif;">Notre Galerie</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {images.map((img, i) => (
+        <button
+          class="gallery-item relative rounded-xl overflow-hidden aspect-square group cursor-pointer"
+          data-src={img.src}
+          data-alt={img.alt}
+          aria-label={`Voir la photo : ${img.caption}`}
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-[#0B3C5D] opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p class="text-white text-sm font-medium">{img.caption}</p>
+          </div>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Visionneuse d'images">
+  <button id="lightbox-close" class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 z-10" aria-label="Fermer">×</button>
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full rounded-xl object-contain" />
+  <p id="lightbox-caption" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full"></p>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.gallery-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.getAttribute('data-src') || '';
+      const alt = btn.getAttribute('data-alt') || '';
+      if (lightboxImg) lightboxImg.src = src;
+      if (lightboxImg) lightboxImg.alt = alt;
+      if (lightboxCaption) lightboxCaption.textContent = alt;
+      lightbox?.classList.remove('hidden');
+      lightbox?.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    lightbox?.classList.add('hidden');
+    lightbox?.classList.remove('flex');
+    document.body.style.overflow = '';
+    if (lightboxImg) lightboxImg.src = '';
+  }
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>

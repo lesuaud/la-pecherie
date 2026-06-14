@@ -1,0 +1,20 @@
+{
+  "saison": {
+    "debut": "Avril",
+    "fin": "Octobre"
+  },
+  "service": {
+    "midi": "12h00 – 14h30",
+    "soir": "19h00 – 22h00"
+  },
+  "fermetures": {
+    "horsJuilletAout": ["Mardi soir", "Mercredi (journée entière)"],
+    "juilletAout": "Ouvert 7j/7"
+  },
+  "schema": {
+    "ouvertureHoraires": [
+      "Mo,Tu,Th,Fr,Sa,Su 12:00-14:30",
+      "Mo,Th,Fr,Sa,Su 19:00-22:00"
+    ]
+  }
+}

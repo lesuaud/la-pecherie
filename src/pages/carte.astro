@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import menu from '../data/menu.json';
+---
+<Layout
+  title="La Carte – La Pêcherie | Port d'Hourtin, Gironde"
+  description="Découvrez toute la carte de La Pêcherie : moules, poissons, viandes, salades, desserts et formule traiteur. Restaurant au port d'Hourtin, Gironde."
+>
+  <header style="background-color: #0B3C5D;" class="text-white py-8 px-4">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon points="50,4 55,44 96,50 55,56 50,96 45,56 4,50 45,44" fill="#10A0D0"/>
+          <polygon points="50,15 54,46 85,50 54,54 50,85 46,54 15,50 46,46" fill="#90D0F0" opacity="0.55"/>
+          <circle cx="50" cy="50" r="6" fill="#10A0D0"/>
+          <circle cx="50" cy="50" r="3" fill="white"/>
+        </svg>
+        <span class="text-lg font-bold text-white" style="font-family: 'Playfair Display', Georgia, serif;">La Pêcherie</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <button
+          onclick="window.print()"
+          class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full transition-all"
+        >
+          🖨️ Imprimer
+        </button>
+        <a href="/" class="flex items-center gap-2 text-[#90D0F0] hover:text-white text-sm font-medium transition-colors">
+          ← Retour
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <!-- Title -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-[#0B3C5D] mb-2" style="font-family: 'Playfair Display', Georgia, serif;">Notre Carte</h1>
+      <p class="text-gray-500">Port d'Hourtin, Gironde · <span class="text-green-600 font-medium">🌿 = option végétarienne</span></p>
+      <p class="text-gray-400 text-sm mt-1">Tous nos prix sont TTC · Liste des allergènes disponible sur demande</p>
+    </div>
+
+    <!-- Sections -->
+    {menu.sections.map(section => (
+      <div class={`mb-10 rounded-2xl overflow-hidden ${section.id === 'moules' ? 'border-2 border-[#10A0D0]' : 'border border-gray-100'}`}>
+        <!-- Section header -->
+        <div class={`px-6 py-4 flex items-center gap-3 ${section.id === 'moules' ? 'bg-[#0B3C5D]' : 'bg-gray-50'}`}>
+          <h2 class={`text-2xl font-bold ${section.id === 'moules' ? 'text-white' : 'text-[#0B3C5D]'}`} style="font-family: 'Playfair Display', Georgia, serif;">
+            {section.titre}
+          </h2>
+          {section.specialite && (
+            <span class="bg-[#10A0D0] text-white text-xs font-bold px-3 py-1 rounded-full">⭐ Spécialité maison</span>
+          )}
+          {section.note && (
+            <span class={`text-sm italic ${section.id === 'moules' ? 'text-[#90D0F0]' : 'text-gray-500'}`}>{section.note}</span>
+          )}
+        </div>
+
+        <!-- Items -->
+        <div class="divide-y divide-gray-100">
+          {section.items.map(item => (
+            <div class="flex items-start justify-between gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
+              <div class="flex items-start gap-2 flex-1">
+                {item.veggie && <span class="text-green-600 mt-0.5 flex-shrink-0" title="Végétarien">🌿</span>}
+                <div>
+                  <p class="font-medium text-gray-800">{item.nom}</p>
+                  {item.description && <p class="text-gray-500 text-sm mt-0.5">{item.description}</p>}
+                </div>
+              </div>
+              {item.prix && (
+                <span class={`font-bold whitespace-nowrap ${section.id === 'moules' ? 'text-[#10A0D0]' : 'text-[#E2603F]'}`}>{item.prix}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-12 space-y-4">
+      <p class="text-gray-500 text-sm">Carte susceptible d'évoluer selon les saisons et les arrivages</p>
+      <a
+        href="/#reservation"
+        class="inline-flex items-center gap-2 bg-[#E2603F] hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-base transition-all shadow-md"
+      >
+        📞 Réserver une table
+      </a>
+    </div>
+  </main>
+
+  <!-- Print styles -->
+  <style>
+    @media print {
+      header button { display: none; }
+      .rounded-2xl { border-radius: 0; }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,174 @@
+{
+  "sections": [
+    {
+      "id": "entrees",
+      "titre": "Nos Entrées",
+      "emoji": "🥗",
+      "items": [
+        { "nom": "Saumon façon Gravlax Maison", "description": "mariné à l'aneth", "prix": "14,90 €" },
+        { "nom": "Burrata & Jardin d'été", "description": "burrata, salade, tomates", "prix": "12,90 €", "veggie": true },
+        { "nom": "Chiffonnade de Jambon de Pays", "description": "servie avec ses condiments", "prix": "10,90 €" },
+        { "nom": "Assiette de Crevettes", "description": "servie avec sa mayonnaise maison", "prix": "10,90 €" },
+        { "nom": "Huîtres par 6 n°3", "description": "vinaigre échalote", "prix": "12,90 €" },
+        { "nom": "Huîtres par 12 n°3", "description": "vinaigre échalote", "prix": "22,90 €" }
+      ]
+    },
+    {
+      "id": "tapas",
+      "titre": "Nos Tapas",
+      "emoji": "🍢",
+      "items": [
+        { "nom": "Assiette à Partager", "description": "onion rings, chili cheese, samoussa au bœuf", "prix": "12,90 €" },
+        { "nom": "Tapas de la Mer", "description": "accras, beignets de crevettes, pépites d'encornets", "prix": "12,90 €" },
+        { "nom": "Tapas Veggie", "description": "potato pops, tempuras de légumes, falafels", "prix": "12,90 €", "veggie": true },
+        { "nom": "Éperlans Frits", "description": "env. 180 g", "prix": "8,90 €" }
+      ]
+    },
+    {
+      "id": "salades",
+      "titre": "Nos Salades",
+      "emoji": "🥙",
+      "items": [
+        { "nom": "Poke de la Mer", "description": "riz, chou rouge, saumon, edamame, mangue, sésame", "prix": "16,90 €" },
+        { "nom": "Salade César", "description": "salade, tomates, poulet pané, œuf, croûtons, parmesan", "prix": "17,90 €" },
+        { "nom": "Salade Estivale", "description": "burrata, salade, tomates, jambon de pays, pesto", "prix": "17,90 €" }
+      ]
+    },
+    {
+      "id": "moules",
+      "titre": "Nos Moules",
+      "sousTitre": "NOTRE SPÉCIALITÉ",
+      "emoji": "🐚",
+      "specialite": true,
+      "note": "Servies avec du pain maison",
+      "items": [
+        { "nom": "Moules à la Marinière", "description": "oignons, échalotes, persil, vin blanc", "prix": "14,90 €" },
+        { "nom": "Moules à la Crème", "description": "oignons, échalotes, crème, persil, vin blanc", "prix": "15,90 €" },
+        { "nom": "Moules à la Crème d'Ail", "description": "ail, crème, persil, vin blanc", "prix": "15,90 €" },
+        { "nom": "Moules au Roquefort", "description": "roquefort, crème, persil", "prix": "16,90 €" }
+      ]
+    },
+    {
+      "id": "burgers",
+      "titre": "Nos Burgers",
+      "emoji": "🍔",
+      "note": "Sauce maison au choix : Burger, Tartare, Moutarde & Miel, Roquefort, Mayonnaise.",
+      "items": [
+        { "nom": "Burger du Boucher", "description": "steak du boucher 125 g, salade, tomates, confit d'oignons, fromage", "prix": "16,90 €" },
+        { "nom": "Burger du Fermier", "description": "poulet pané, salade, tomates, oignons rouges, fromage", "prix": "16,90 €" },
+        { "nom": "Burger du Pêcheur", "description": "poisson pané, salade, tomates, oignons rouges, fromage", "prix": "16,90 €" },
+        { "nom": "Burger du Jardinier", "description": "galette de légumes, salade, tomates, oignons rouges, fromage", "prix": "16,90 €", "veggie": true }
+      ]
+    },
+    {
+      "id": "poissons",
+      "titre": "Nos Poissons",
+      "emoji": "🐟",
+      "items": [
+        { "nom": "Fish & Chips", "description": "sauce tartare maison", "prix": "14,90 €" },
+        { "nom": "Pavé de Saumon Grillé", "description": "sauce crème citronnée", "prix": "21,90 €" },
+        { "nom": "Bar Entier Rôti au Four", "description": "sauce vierge", "prix": "24,90 €" }
+      ]
+    },
+    {
+      "id": "viandes",
+      "titre": "Nos Viandes",
+      "emoji": "🥩",
+      "items": [
+        { "nom": "Entrecôte", "description": "env. 300 g, sauce roquefort", "prix": "24,90 €" },
+        { "nom": "Suprême de Poulet", "description": "sauce moutarde et miel", "prix": "17,90 €" }
+      ]
+    },
+    {
+      "id": "tagliatelles",
+      "titre": "Nos Tagliatelles",
+      "emoji": "🍝",
+      "items": [
+        { "nom": "Tagliatelles Carbonara", "description": "crème, lardons, œuf, parmesan", "prix": "15,90 €" },
+        { "nom": "Tagliatelles au Pesto", "description": "tomates confites, pesto", "prix": "14,90 €", "veggie": true },
+        { "nom": "Tagliatelles au Saumon", "description": "crème, saumon, ail, basilic, parmesan", "prix": "17,90 €" }
+      ]
+    },
+    {
+      "id": "signature",
+      "titre": "Plat Signature",
+      "emoji": "⭐",
+      "items": [
+        { "nom": "Calamars à l'Espagnol", "description": "calamars, tomates, poivrons, chorizo", "prix": "18,90 €" }
+      ]
+    },
+    {
+      "id": "accompagnements",
+      "titre": "Accompagnements",
+      "emoji": "🍟",
+      "note": "Tous nos plats sont servis avec un accompagnement au choix : frites, salade, riz ou tagliatelles.",
+      "items": [
+        { "nom": "Supplément accompagnement", "description": "", "prix": "3,50 €" }
+      ]
+    },
+    {
+      "id": "menu-enfant",
+      "titre": "Menu Petit Moussaillon",
+      "emoji": "🏴‍☠️",
+      "prix_fixe": "12,90 €",
+      "note": "Un plat au choix + un dessert au choix",
+      "items": [
+        { "nom": "Plats au choix", "description": "aiguillettes panées / pâte carbonara / cheeseburger / petite moule crème", "prix": "" },
+        { "nom": "Desserts au choix", "description": "1 boule de glace / 1 crêpe au Nutella", "prix": "" }
+      ]
+    },
+    {
+      "id": "desserts",
+      "titre": "Nos Desserts",
+      "emoji": "🍮",
+      "items": [
+        { "nom": "Brioche Perdue", "description": "brioche façon pain perdu, sauce caramel, chantilly", "prix": "8,90 €" },
+        { "nom": "Noix de Coco Givrée", "description": "crème glacée coco, noix de coco râpée, chantilly", "prix": "7,90 €" },
+        { "nom": "Café Gourmand de la Pêcherie", "description": "3 mini-desserts, boule de glace vanille, chantilly", "prix": "9,50 €" },
+        { "nom": "Fondant au Chocolat", "description": "fondant chocolat, crème anglaise, chantilly", "prix": "8,90 €" }
+      ]
+    },
+    {
+      "id": "coupes-glacees",
+      "titre": "Nos Coupes Glacées",
+      "emoji": "🍨",
+      "items": [
+        { "nom": "Le Liégeois", "description": "2 boules (chocolat, café ou caramel), chantilly et coulis", "prix": "7,90 €" },
+        { "nom": "Le Colonel", "description": "2 boules citron vert et vodka", "prix": "7,90 €" },
+        { "nom": "L'Iceberg", "description": "2 boules menthe-chocolat, Get 27, chocolat et chantilly", "prix": "11,90 €" },
+        { "nom": "L'Antillaise", "description": "1 boule rhum-raisin, 1 boule coco, rhum et chantilly", "prix": "9,90 €" },
+        { "nom": "L'Exotique", "description": "1 boule mangue, 1 boule passion, coulis fruits rouges et chantilly", "prix": "8,90 €" },
+        { "nom": "La Dame Blanche", "description": "2 boules vanille, coulis chocolat et chantilly", "prix": "8,90 €" },
+        { "nom": "Le Banana Split", "description": "1 boule vanille, 1 boule chocolat, 1 boule fraise, banane, coulis chocolat et chantilly", "prix": "10,90 €" }
+      ],
+      "composez": {
+        "titre": "Composez votre Coupe",
+        "boules": "1 boule : 2,80 € · 2 boules : 5,50 € · 3 boules : 7,90 €",
+        "glaces": ["chocolat", "café", "caramel", "fraise", "vanille", "coco", "menthe-chocolat", "rhum-raisin"],
+        "sorbets": ["passion", "mangue", "citron vert", "framboise"],
+        "supplements_180": "chantilly, banane, Nutella, confiture, brisures cookies/Oréo/spéculoos : 1,80 €",
+        "supplements_100": "coulis (chocolat, café, caramel, fruits rouges), noix de coco râpée, citron : 1,00 €"
+      }
+    },
+    {
+      "id": "crepes",
+      "titre": "Nos Crêpes",
+      "emoji": "🥞",
+      "items": [
+        { "nom": "Sucre", "description": "", "prix": "3,00 €", "veggie": true },
+        { "nom": "Citron", "description": "", "prix": "4,00 €", "veggie": true },
+        { "nom": "Confiture", "description": "", "prix": "4,50 €", "veggie": true },
+        { "nom": "Nutella", "description": "", "prix": "4,50 €", "veggie": true },
+        { "nom": "Chantilly", "description": "", "prix": "4,50 €", "veggie": true },
+        { "nom": "Nutella Chantilly", "description": "", "prix": "5,90 €", "veggie": true },
+        { "nom": "1 boule de glace", "description": "", "prix": "5,50 €", "veggie": true },
+        { "nom": "2 boules de glace", "description": "", "prix": "7,80 €", "veggie": true },
+        { "nom": "Coco'Nut", "description": "Nutella, noix de coco râpée", "prix": "5,50 €", "gourmande": true, "veggie": true },
+        { "nom": "Banatella", "description": "Nutella, rondelles de bananes", "prix": "6,30 €", "gourmande": true, "veggie": true },
+        { "nom": "Cook'Nut", "description": "Nutella, brisures de cookies", "prix": "6,30 €", "gourmande": true, "veggie": true },
+        { "nom": "Déliréo", "description": "Nutella, brisures d'Oréo", "prix": "6,30 €", "gourmande": true, "veggie": true },
+        { "nom": "La Caramelia", "description": "1 boule caramel, coulis caramel, brisures de spéculoos, chantilly", "prix": "9,90 €", "gourmande": true, "veggie": true }
+      ]
+    }
+  ]
+}

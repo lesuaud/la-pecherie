@@ -1,0 +1,52 @@
+---
+import menu from '../data/menu.json';
+// Show a selection of sections on the homepage
+const previewSections = ['moules', 'poissons', 'viandes', 'desserts'];
+const sections = menu.sections.filter(s => previewSections.includes(s.id));
+---
+<section id="carte" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="inline-block bg-[#10A0D0] text-white text-xs font-semibold uppercase tracking-widest px-4 py-1 rounded-full mb-4">Aperçu</span>
+      <h2 class="text-4xl sm:text-5xl font-bold text-[#0B3C5D]" style="font-family: 'Playfair Display', Georgia, serif;">Notre Carte</h2>
+      <p class="text-gray-500 mt-3 text-lg">Une sélection de nos spécialités du moment</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 mb-12">
+      {sections.map(section => (
+        <div class={`rounded-2xl p-6 border-2 ${section.id === 'moules' ? 'border-[#10A0D0] bg-[#f0f9ff]' : 'border-gray-100 bg-gray-50'}`}>
+          <div class="flex items-center gap-3 mb-5">
+            <h3 class="text-2xl font-bold text-[#0B3C5D]" style="font-family: 'Playfair Display', Georgia, serif;">{section.titre}</h3>
+            {section.specialite && (
+              <span class="bg-[#10A0D0] text-white text-xs font-bold px-2 py-0.5 rounded-full">⭐ Spécialité</span>
+            )}
+          </div>
+          {section.note && <p class="text-sm text-[#10A0D0] font-medium mb-3 italic">{section.note}</p>}
+          <ul class="space-y-3">
+            {section.items.slice(0, 4).map(item => (
+              <li class="flex items-start justify-between gap-4">
+                <div class="flex items-start gap-2 flex-1">
+                  {item.veggie && <span title="Option végétarienne" class="text-green-600 text-sm mt-0.5">🌿</span>}
+                  <div>
+                    <span class="text-gray-800 font-medium text-sm">{item.nom}</span>
+                    {item.description && <p class="text-gray-500 text-xs mt-0.5">{item.description}</p>}
+                  </div>
+                </div>
+                {item.prix && <span class="text-[#E2603F] font-bold text-sm whitespace-nowrap">{item.prix}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/carte"
+        class="inline-flex items-center gap-2 bg-[#0B3C5D] hover:bg-[#07294A] text-white font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-md hover:shadow-lg"
+      >
+        Voir la carte complète →
+      </a>
+    </div>
+  </div>
+</section>

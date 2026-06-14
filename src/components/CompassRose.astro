@@ -1,0 +1,16 @@
+---
+export interface Props {
+  size?: number;
+  color?: string;
+}
+const { size = 48, color = '#10A0D0' } = Astro.props;
+---
+<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 100 100" aria-hidden="true">
+  <!-- Main 4-point star -->
+  <polygon points="50,4 55,44 96,50 55,56 50,96 45,56 4,50 45,44" fill={color}/>
+  <!-- Secondary 4-point star (45deg rotated) -->
+  <polygon points="50,15 54,46 85,50 54,54 50,85 46,54 15,50 46,46" fill={color} opacity="0.55"/>
+  <!-- Center circle -->
+  <circle cx="50" cy="50" r="6" fill={color}/>
+  <circle cx="50" cy="50" r="3" fill="white"/>
+</svg>

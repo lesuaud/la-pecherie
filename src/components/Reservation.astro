@@ -1,0 +1,168 @@
+---
+---
+<section id="reservation" style="background-color: #F6EEE0;">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-10">
+      <span class="inline-block bg-[#10A0D0] text-white text-xs font-semibold uppercase tracking-widest px-4 py-1 rounded-full mb-4">Réservation</span>
+      <h2 class="text-4xl sm:text-5xl font-bold text-[#0B3C5D] mb-4" style="font-family: 'Playfair Display', Georgia, serif;">Réserver une Table</h2>
+
+      <!-- Phone prominent -->
+      <a
+        href="tel:+33750365646"
+        class="inline-flex items-center gap-3 bg-[#E2603F] hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-xl transition-all duration-200 shadow-lg mb-4"
+      >
+        📞 07 50 36 56 46
+      </a>
+      <p class="text-gray-600 text-sm">Ou remplissez le formulaire ci-dessous</p>
+    </div>
+
+    <!-- Warning box -->
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 flex gap-3">
+      <span class="text-amber-500 text-xl flex-shrink-0">⚠️</span>
+      <p class="text-amber-800 text-sm leading-relaxed">
+        <strong>Votre demande n'est pas une réservation ferme.</strong> Elle ne sera définitivement validée qu'après réception d'un <strong>SMS de confirmation</strong> de notre part.
+      </p>
+    </div>
+
+    <!-- Netlify Form -->
+    <form
+      name="reservation"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="bg-white rounded-2xl shadow-lg p-8 space-y-5"
+    >
+      <input type="hidden" name="form-name" value="reservation" />
+      <!-- Honeypot -->
+      <p class="hidden">
+        <label>Ne pas remplir : <input name="bot-field" /></label>
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="prenom" class="block text-sm font-medium text-gray-700 mb-1">Prénom <span class="text-red-500">*</span></label>
+          <input
+            type="text"
+            id="prenom"
+            name="prenom"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#10A0D0] focus:border-transparent transition"
+            placeholder="Jean"
+          />
+        </div>
+        <div>
+          <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Nom <span class="text-red-500">*</span></label>
+          <input
+            type="text"
+            id="nom"
+            name="nom"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#10A0D0] focus:border-transparent transition"
+            placeholder="Dupont"
+          />
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="telephone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone <span class="text-red-500">*</span></label>
+          <input
+            type="tel"
+            id="telephone"
+            name="telephone"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#10A0D0] focus:border-transparent transition"
+            placeholder="06 12 34 56 78"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email <span class="text-red-500">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#10A0D0] focus:border-transparent transition"
+            placeholder="jean@exemple.fr"
+          />
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Date <span class="text-red-500">*</span></label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#10A0D0] focus:border-transparent transition"
+          />
+        </div>
+        <div>
+          <label for="heure" class="block text-sm font-medium text-gray-700 mb-1">Heure <span class="text-red-500">*</span></label>
+          <select
+            id="heure"
+            name="heure"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#10A0D0] focus:border-transparent transition"
+          >
+            <option value="">-- Choisir --</option>
+            <optgroup label="Déjeuner">
+              <option value="12h00">12h00</option>
+              <option value="12h30">12h30</option>
+              <option value="13h00">13h00</option>
+              <option value="13h30">13h30</option>
+              <option value="14h00">14h00</option>
+            </optgroup>
+            <optgroup label="Dîner">
+              <option value="19h00">19h00</option>
+              <option value="19h30">19h30</option>
+              <option value="20h00">20h00</option>
+              <option value="20h30">20h30</option>
+              <option value="21h00">21h00</option>
+              <option value="21h30">21h30</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="couverts" class="block text-sm font-medium text-gray-700 mb-1">Nombre de couverts <span class="text-red-500">*</span></label>
+        <select
+          id="couverts"
+          name="couverts"
+          required
+          class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#10A0D0] focus:border-transparent transition"
+        >
+          <option value="">-- Choisir --</option>
+          {[1,2,3,4,5,6,7,8,9,10,11,12].map(n => (
+            <option value={n}>{n} {n === 1 ? 'personne' : 'personnes'}</option>
+          ))}
+          <option value="13+">13 personnes et +</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message (optionnel)</label>
+        <textarea
+          id="message"
+          name="message"
+          rows={4}
+          class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#10A0D0] focus:border-transparent transition resize-none"
+          placeholder="Allergie, occasion spéciale, demande particulière…"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-[#E2603F] hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-md hover:shadow-lg"
+      >
+        Envoyer ma demande de réservation
+      </button>
+    </form>
+
+    <!-- TheFork/Zenchef widget placeholder -->
+    <!-- <div id="zenchef-widget"></div> -->
+  </div>
+</section>

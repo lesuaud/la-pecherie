@@ -1,0 +1,18 @@
+{
+  "bandeau": {
+    "actif": true,
+    "message": "🎉 Ouvert pour la saison ! De midi à 14h30 et de 19h à 22h",
+    "type": "ouvert"
+  },
+  "contact": {
+    "telephone": "07 50 36 56 46",
+    "telephoneHref": "tel:+33750365646",
+    "emailResa": "reservation.lapecherie.hourtin@gmail.com",
+    "adresse": "Port d'Hourtin, face à la Résidence Odalys « Résidence du Port »",
+    "codePostal": "33990",
+    "ville": "Hourtin",
+    "googleMapsEmbed": "https://maps.google.com/maps?q=45.18180,-1.08516&z=16&output=embed",
+    "googleMapsLink": "https://maps.google.com/maps?q=45.18180,-1.08516",
+    "googleBusiness": "https://share.google/imu1V9GePzUv1Sdi4"
+  }
+}

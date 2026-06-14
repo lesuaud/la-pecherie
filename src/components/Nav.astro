@@ -1,0 +1,86 @@
+---
+---
+<nav id="main-nav" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon points="50,4 55,44 96,50 55,56 50,96 45,56 4,50 45,44" fill="#10A0D0"/>
+          <polygon points="50,15 54,46 85,50 54,54 50,85 46,54 15,50 46,46" fill="#10A0D0" opacity="0.55"/>
+          <circle cx="50" cy="50" r="6" fill="#10A0D0"/>
+          <circle cx="50" cy="50" r="3" fill="white"/>
+        </svg>
+        <span class="text-xl font-bold text-[#0B3C5D]" style="font-family: 'Playfair Display', Georgia, serif;">La Pêcherie</span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#moules" class="text-sm font-medium text-gray-700 hover:text-[#10A0D0] transition-colors">Moules</a>
+        <a href="#etablissement" class="text-sm font-medium text-gray-700 hover:text-[#10A0D0] transition-colors">Établissement</a>
+        <a href="#carte" class="text-sm font-medium text-gray-700 hover:text-[#10A0D0] transition-colors">Carte</a>
+        <a href="#galerie" class="text-sm font-medium text-gray-700 hover:text-[#10A0D0] transition-colors">Galerie</a>
+        <a href="#traiteur" class="text-sm font-medium text-gray-700 hover:text-[#10A0D0] transition-colors">Traiteur</a>
+        <a href="#infos" class="text-sm font-medium text-gray-700 hover:text-[#10A0D0] transition-colors">Infos</a>
+        <a href="#reservation" class="bg-[#E2603F] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-colors">Réserver</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" aria-label="Ouvrir le menu" class="md:hidden p-2 rounded-md text-gray-700 hover:text-[#10A0D0]">
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+    <div class="flex flex-col px-4 py-3 gap-3">
+      <a href="#moules" class="mobile-link text-sm font-medium text-gray-700 hover:text-[#10A0D0] py-1 transition-colors">Moules</a>
+      <a href="#etablissement" class="mobile-link text-sm font-medium text-gray-700 hover:text-[#10A0D0] py-1 transition-colors">Établissement</a>
+      <a href="#carte" class="mobile-link text-sm font-medium text-gray-700 hover:text-[#10A0D0] py-1 transition-colors">Carte</a>
+      <a href="#galerie" class="mobile-link text-sm font-medium text-gray-700 hover:text-[#10A0D0] py-1 transition-colors">Galerie</a>
+      <a href="#traiteur" class="mobile-link text-sm font-medium text-gray-700 hover:text-[#10A0D0] py-1 transition-colors">Traiteur</a>
+      <a href="#infos" class="mobile-link text-sm font-medium text-gray-700 hover:text-[#10A0D0] py-1 transition-colors">Infos</a>
+      <a href="#reservation" class="mobile-link bg-[#E2603F] text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-orange-600 transition-colors">Réserver</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Scroll shadow
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      nav?.classList.add('shadow-md');
+    } else {
+      nav?.classList.remove('shadow-md');
+    }
+  });
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isHidden = mobileMenu?.classList.contains('hidden');
+    mobileMenu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    });
+  });
+</script>
