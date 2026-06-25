@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Demande reçue – La Pêcherie"
+  description="Votre demande de réservation a bien été envoyée à La Pêcherie, restaurant au port d'Hourtin."
+>
+  <div style="background-color: #0B3C5D; min-height: 100vh;" class="flex items-center justify-center px-4 py-20">
+    <div class="bg-white rounded-2xl shadow-xl max-w-lg w-full p-10 text-center">
+
+      <!-- Compass rose -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100" class="mx-auto mb-6" aria-hidden="true">
+        <polygon points="50,4 55,44 96,50 55,56 50,96 45,56 4,50 45,44" fill="#10A0D0"/>
+        <polygon points="50,15 54,46 85,50 54,54 50,85 46,54 15,50 46,46" fill="#90D0F0" opacity="0.55"/>
+        <circle cx="50" cy="50" r="6" fill="#10A0D0"/>
+        <circle cx="50" cy="50" r="3" fill="white"/>
+      </svg>
+
+      <h1 class="text-3xl font-bold text-[#0B3C5D] mb-3" style="font-family: 'Playfair Display', Georgia, serif;">
+        Demande bien reçue !
+      </h1>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Merci pour votre demande de réservation à <strong>La Pêcherie</strong>.<br>
+        Nous vous contacterons par SMS dans les meilleurs délais pour confirmer votre table.
+      </p>
+
+      <!-- Reminder -->
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-left flex gap-3">
+        <span class="text-amber-500 text-xl flex-shrink-0">⚠️</span>
+        <p class="text-amber-800 text-sm leading-relaxed">
+          <strong>Rappel :</strong> votre réservation ne sera <strong>définitivement confirmée</strong> qu'après réception d'un <strong>SMS de notre part</strong>.
+        </p>
+      </div>
+
+      <!-- Callback CTA -->
+      <p class="text-gray-500 text-sm mb-4">Besoin de nous joindre directement ?</p>
+      <a
+        href="tel:+33750365646"
+        class="inline-flex items-center gap-2 bg-[#E2603F] hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full transition-all mb-6"
+      >
+        📞 07 50 36 56 46
+      </a>
+
+      <div class="border-t border-gray-100 pt-6">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-[#10A0D0] hover:text-[#0B3C5D] font-medium text-sm transition-colors"
+        >
+          ← Retour à l'accueil
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
