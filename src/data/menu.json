@@ -40,7 +40,7 @@
       "sousTitre": "NOTRE SPÉCIALITÉ",
       "emoji": "🐚",
       "specialite": true,
-      "note": "Servies avec du pain maison",
+      "note": "Servies avec du pain du Fournil du Port",
       "items": [
         { "nom": "Moules à la Marinière", "description": "oignons, échalotes, persil, vin blanc", "prix": "14,90 €" },
         { "nom": "Moules à la Crème", "description": "oignons, échalotes, crème, persil, vin blanc", "prix": "15,90 €" },
@@ -155,19 +155,19 @@
       "titre": "Nos Crêpes",
       "emoji": "🥞",
       "items": [
-        { "nom": "Sucre", "description": "", "prix": "3,00 €", "veggie": true },
-        { "nom": "Citron", "description": "", "prix": "4,00 €", "veggie": true },
-        { "nom": "Confiture", "description": "", "prix": "4,50 €", "veggie": true },
-        { "nom": "Nutella", "description": "", "prix": "4,50 €", "veggie": true },
-        { "nom": "Chantilly", "description": "", "prix": "4,50 €", "veggie": true },
-        { "nom": "Nutella Chantilly", "description": "", "prix": "5,90 €", "veggie": true },
-        { "nom": "1 boule de glace", "description": "", "prix": "5,50 €", "veggie": true },
-        { "nom": "2 boules de glace", "description": "", "prix": "7,80 €", "veggie": true },
-        { "nom": "Coco'Nut", "description": "Nutella, noix de coco râpée", "prix": "5,50 €", "gourmande": true, "veggie": true },
-        { "nom": "Banatella", "description": "Nutella, rondelles de bananes", "prix": "6,30 €", "gourmande": true, "veggie": true },
-        { "nom": "Cook'Nut", "description": "Nutella, brisures de cookies", "prix": "6,30 €", "gourmande": true, "veggie": true },
-        { "nom": "Déliréo", "description": "Nutella, brisures d'Oréo", "prix": "6,30 €", "gourmande": true, "veggie": true },
-        { "nom": "La Caramelia", "description": "1 boule caramel, coulis caramel, brisures de spéculoos, chantilly", "prix": "9,90 €", "gourmande": true, "veggie": true }
+        { "nom": "Sucre", "description": "", "prix": "3,00 €" },
+        { "nom": "Citron", "description": "", "prix": "4,00 €" },
+        { "nom": "Confiture", "description": "", "prix": "4,50 €" },
+        { "nom": "Nutella", "description": "", "prix": "4,50 €" },
+        { "nom": "Chantilly", "description": "", "prix": "4,50 €" },
+        { "nom": "Nutella Chantilly", "description": "", "prix": "5,90 €" },
+        { "nom": "1 boule de glace", "description": "", "prix": "5,50 €" },
+        { "nom": "2 boules de glace", "description": "", "prix": "7,80 €" },
+        { "nom": "Coco'Nut", "description": "Nutella, noix de coco râpée", "prix": "5,50 €", "gourmande": true },
+        { "nom": "Banatella", "description": "Nutella, rondelles de bananes", "prix": "6,30 €", "gourmande": true },
+        { "nom": "Cook'Nut", "description": "Nutella, brisures de cookies", "prix": "6,30 €", "gourmande": true },
+        { "nom": "Déliréo", "description": "Nutella, brisures d'Oréo", "prix": "6,30 €", "gourmande": true },
+        { "nom": "La Caramelia", "description": "1 boule caramel, coulis caramel, brisures de spéculoos, chantilly", "prix": "9,90 €", "gourmande": true }
       ]
     }
   ]
