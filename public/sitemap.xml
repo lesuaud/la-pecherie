@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://la-pecherie.netlify.app/</loc>
+    <loc>https://lapecherie-hourtin.fr/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://la-pecherie.netlify.app/carte</loc>
+    <loc>https://lapecherie-hourtin.fr/carte</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lapecherie-hourtin.fr/merci</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
   </url>
 </urlset>

@@ -2,11 +2,13 @@
 export interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
 }
 
 const {
-  title = "La Pêcherie – Brasserie poisson & viande | Port d'Hourtin, Gironde",
-  description = "Restaurant La Pêcherie au port d'Hourtin en Gironde. Spécialités moules, fruits de mer, poissons frais et viandes. Ouvert d'avril à octobre. Réservation : 07 50 36 56 46."
+  title = "La Pêcherie — Brasserie & fruits de mer au port d'Hourtin (Gironde)",
+  description = "Brasserie au port d'Hourtin en Médoc : moules, fruits de mer, poissons frais et viandes grillées. Terrasse face au lac, formule du midi, ouvert d'avril à octobre. Résa : 07 50 36 56 46.",
+  canonical = "https://lapecherie-hourtin.fr/"
 } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -15,7 +17,7 @@ const {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <meta name="keywords" content="restaurant port Hourtin, moules Hourtin, fruits de mer Gironde, brasserie bord lac, restaurant Hourtin, La Pêcherie Hourtin, restaurant poisson Gironde" />
+  <meta name="keywords" content="restaurant port Hourtin, moules Hourtin, fruits de mer Médoc, brasserie bord lac Hourtin, La Pêcherie Hourtin, restaurant poisson Gironde, brasserie Médoc" />
   <meta name="author" content="La Pêcherie" />
   <meta name="robots" content="index, follow" />
 
@@ -23,8 +25,8 @@ const {
   <meta property="og:type" content="restaurant" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:url" content="https://la-pecherie.netlify.app/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content="https://lapecherie-hourtin.fr/og-image.jpg" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="La Pêcherie" />
 
@@ -32,11 +34,11 @@ const {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80" />
+  <meta name="twitter:image" content="https://lapecherie-hourtin.fr/og-image.jpg" />
 
   <title>{title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="canonical" href="https://la-pecherie.netlify.app/" />
+  <link rel="canonical" href={canonical} />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,19 +66,19 @@ const {
     }
   </script>
 
-  <!-- Schema.org JSON-LD -->
+  <!-- Schema.org JSON-LD Restaurant -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "La Pêcherie",
-    "description": "Brasserie poisson & viande au port d'Hourtin, Gironde. Spécialités moules, fruits de mer, poissons frais.",
-    "url": "https://la-pecherie.netlify.app/",
+    "description": "Brasserie poisson & viande au port d'Hourtin, Gironde. Spécialités moules, fruits de mer, poissons frais. Terrasse face au lac.",
+    "url": "https://lapecherie-hourtin.fr/",
     "telephone": "+33750365646",
     "email": "reservation.lapecherie.hourtin@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Port d'Hourtin, face au port, sous la résidence Odalys",
+      "streetAddress": "Face au port, sous la résidence Odalys",
       "addressLocality": "Hourtin",
       "postalCode": "33990",
       "addressCountry": "FR"
@@ -86,14 +88,35 @@ const {
       "latitude": 45.18180,
       "longitude": -1.08516
     },
-    "servesCuisine": ["Seafood", "French", "Fish"],
+    "servesCuisine": ["Fruits de mer", "Moules", "Poisson", "Brasserie française"],
     "priceRange": "€€",
     "openingHours": [
       "Mo,Tu,Th,Fr,Sa,Su 12:00-14:30",
       "Mo,Th,Fr,Sa,Su 19:00-22:00"
     ],
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
-    "hasMap": "https://maps.google.com/maps?q=45.18180,-1.08516"
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "validFrom": "--04-01",
+        "validThrough": "--10-31",
+        "dayOfWeek": ["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "12:00",
+        "closes": "14:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "validFrom": "--04-01",
+        "validThrough": "--10-31",
+        "dayOfWeek": ["Monday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "19:00",
+        "closes": "22:00"
+      }
+    ],
+    "hasMap": "https://maps.google.com/maps?q=45.18180,-1.08516",
+    "sameAs": "https://share.google/imu1V9GePzUv1Sdi4",
+    "acceptsReservations": true,
+    "hasMenu": "https://lapecherie-hourtin.fr/carte",
+    "image": "https://lapecherie-hourtin.fr/og-image.jpg"
   }
   </script>
 
