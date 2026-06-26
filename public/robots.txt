@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /merci
+Disallow: /formulaires
 
 Sitemap: https://lapecherie-hourtin.fr/sitemap.xml

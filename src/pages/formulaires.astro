@@ -1,0 +1,29 @@
+---
+// Page de détection Netlify Forms — complément de public/__forms.html
+// Génère dist/formulaires/index.html au build, visible par le bot Netlify.
+// Cette page n'est pas liée dans la navigation.
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><title>Formulaires – La Pêcherie</title><meta name="robots" content="noindex" /></head>
+<body>
+  <form name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci">
+    <input type="hidden" name="form-name" value="reservation" />
+    <input type="hidden" name="bot-field" />
+    <input type="text"   name="prenom"    />
+    <input type="text"   name="nom"       />
+    <input type="tel"    name="telephone" />
+    <input type="email"  name="email"     />
+    <input type="date"   name="date"      />
+    <select name="heure">
+      <option value="12h00">12h00</option>
+      <option value="19h00">19h00</option>
+    </select>
+    <select name="couverts">
+      <option value="2">2 personnes</option>
+    </select>
+    <textarea name="message"></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</body>
+</html>

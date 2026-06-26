@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <!--
-  Fichier technique — ne pas supprimer.
-  Ce formulaire statique permet à Netlify de détecter le formulaire "reservation"
-  au moment du build. Le vrai formulaire visible est dans src/components/Reservation.astro.
-  Les deux doivent avoir exactement les mêmes attributs name sur chaque champ.
+  NE PAS SUPPRIMER — fichier technique requis pour Netlify Forms.
+  Astro génère le HTML dynamiquement ; ce fichier statique dans public/
+  permet au bot Netlify de détecter le formulaire au moment du build.
+  Les attributs name doivent rester identiques à ceux de Reservation.astro.
 -->
 <html lang="fr">
 <head><meta charset="UTF-8"><title>Formulaires – La Pêcherie</title></head>
 <body>
-
   <form name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci">
     <input type="hidden" name="form-name" value="reservation" />
-    <p class="hidden"><input name="bot-field" /></p>
-    <input type="text"   name="prenom"   />
-    <input type="text"   name="nom"      />
-    <input type="tel"    name="telephone"/>
-    <input type="email"  name="email"    />
-    <input type="date"   name="date"     />
+    <input type="hidden" name="bot-field" />
+    <input type="text"   name="prenom"    />
+    <input type="text"   name="nom"       />
+    <input type="tel"    name="telephone" />
+    <input type="email"  name="email"     />
+    <input type="date"   name="date"      />
     <select name="heure">
       <option value="12h00">12h00</option>
       <option value="12h30">12h30</option>
@@ -31,23 +30,22 @@
       <option value="21h30">21h30</option>
     </select>
     <select name="couverts">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-      <option value="13+">13+</option>
+      <option value="1">1 personne</option>
+      <option value="2">2 personnes</option>
+      <option value="3">3 personnes</option>
+      <option value="4">4 personnes</option>
+      <option value="5">5 personnes</option>
+      <option value="6">6 personnes</option>
+      <option value="7">7 personnes</option>
+      <option value="8">8 personnes</option>
+      <option value="9">9 personnes</option>
+      <option value="10">10 personnes</option>
+      <option value="11">11 personnes</option>
+      <option value="12">12 personnes</option>
+      <option value="13+">13 personnes et +</option>
     </select>
     <textarea name="message"></textarea>
     <button type="submit">Envoyer</button>
   </form>
-
 </body>
 </html>
