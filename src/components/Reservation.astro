@@ -24,11 +24,46 @@
       </p>
     </div>
 
+    <!-- Message de confirmation (caché par défaut, affiché après envoi) -->
+    <div
+      id="resa-confirmation"
+      style="display:none;"
+      class="bg-white rounded-2xl shadow-lg p-8 text-center"
+    >
+      <div class="flex justify-center mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon points="50,4 55,44 96,50 55,56 50,96 45,56 4,50 45,44" fill="#10A0D0"/>
+          <polygon points="50,15 54,46 85,50 54,54 50,85 46,54 15,50 46,46" fill="#90D0F0" opacity="0.55"/>
+          <circle cx="50" cy="50" r="6" fill="#10A0D0"/>
+          <circle cx="50" cy="50" r="3" fill="white"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-[#0B3C5D] mb-3" style="font-family: 'Playfair Display', Georgia, serif;">
+        Demande bien envoyée !
+      </h3>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Merci pour votre demande de réservation.<br>
+        Vous recevrez un <strong>SMS de confirmation</strong> de notre part dans les meilleurs délais.
+      </p>
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-6 flex gap-2 text-left">
+        <span class="text-amber-500 flex-shrink-0">⚠️</span>
+        <p class="text-amber-800 text-sm">
+          <strong>Rappel :</strong> votre réservation n'est confirmée qu'après réception du SMS.
+        </p>
+      </div>
+      <a
+        href="tel:+33750365646"
+        class="inline-flex items-center gap-2 bg-[#E2603F] hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full transition-all"
+      >
+        📞 07 50 36 56 46
+      </a>
+    </div>
+
     <!-- Netlify Form -->
     <form
+      id="resa-form"
       name="reservation"
       method="POST"
-      action="/merci"
       data-netlify="true"
       netlify-honeypot="bot-field"
       class="bg-white rounded-2xl shadow-lg p-8 space-y-5"
@@ -157,6 +192,7 @@
 
       <button
         type="submit"
+        id="resa-submit"
         class="w-full bg-[#E2603F] hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-md hover:shadow-lg"
       >
         Envoyer ma demande de réservation
@@ -167,3 +203,37 @@
     <!-- <div id="zenchef-widget"></div> -->
   </div>
 </section>
+
+<script is:inline>
+  var form = document.getElementById('resa-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('resa-submit');
+      if (btn) { btn.disabled = true; btn.textContent = 'Envoi en cours…'; }
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(function(res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          var conf = document.getElementById('resa-confirmation');
+          if (conf) {
+            conf.style.display = 'block';
+            conf.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = 'Envoyer ma demande de réservation'; }
+          alert('Une erreur est survenue. Veuillez nous appeler directement au 07 50 36 56 46.');
+        }
+      })
+      .catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = 'Envoyer ma demande de réservation'; }
+        alert('Une erreur est survenue. Veuillez nous appeler directement au 07 50 36 56 46.');
+      });
+    });
+  }
+</script>
