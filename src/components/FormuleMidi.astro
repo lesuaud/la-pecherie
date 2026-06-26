@@ -1,0 +1,49 @@
+---
+// Utilisé à la fois sur l'accueil (index.astro) et sur la page carte (/carte)
+---
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div style="background-color: #0B3C5D;" class="rounded-2xl overflow-hidden shadow-xl">
+
+    <!-- En-tête -->
+    <div style="background-color: #10A0D0;" class="px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <span class="text-white text-2xl">🍽️</span>
+        <h2 class="text-xl sm:text-2xl font-bold text-white" style="font-family: 'Playfair Display', Georgia, serif;">
+          Formule du Midi
+        </h2>
+      </div>
+      <span class="text-white/80 text-sm font-medium bg-white/20 px-3 py-1 rounded-full">
+        Servie tous les midis · sauf le dimanche
+      </span>
+    </div>
+
+    <!-- Formules -->
+    <div class="px-6 py-6 grid sm:grid-cols-3 gap-4">
+
+      <div class="bg-white/10 rounded-xl p-4 text-center border border-white/20">
+        <p class="text-[#90D0F0] text-xs font-semibold uppercase tracking-widest mb-2">Entrée + Plat + Dessert</p>
+        <p class="text-white text-4xl font-bold" style="font-family: 'Playfair Display', Georgia, serif;">19<span class="text-2xl">,90 €</span></p>
+      </div>
+
+      <div class="bg-white/10 rounded-xl p-4 text-center border border-white/20">
+        <p class="text-[#90D0F0] text-xs font-semibold uppercase tracking-widest mb-2">Entrée + Plat <span class="text-white/60">ou</span> Plat + Dessert</p>
+        <p class="text-white text-4xl font-bold" style="font-family: 'Playfair Display', Georgia, serif;">17<span class="text-2xl">,90 €</span></p>
+      </div>
+
+      <div class="bg-white/10 rounded-xl p-4 text-center border border-white/20">
+        <p class="text-[#90D0F0] text-xs font-semibold uppercase tracking-widest mb-2">Plat seul</p>
+        <p class="text-white text-4xl font-bold" style="font-family: 'Playfair Display', Georgia, serif;">14<span class="text-2xl">,90 €</span></p>
+      </div>
+
+    </div>
+
+    <!-- Suggestion du jour -->
+    <div class="px-6 pb-6">
+      <p class="text-center text-[#90D0F0] text-sm italic border-t border-white/10 pt-4">
+        ✨ Suggestions du jour proposées midi et soir
+      </p>
+    </div>
+
+  </div>
+</div>

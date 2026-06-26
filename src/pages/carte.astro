@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import menu from '../data/menu.json';
+import FormuleMidi from '../components/FormuleMidi.astro';
 ---
 <Layout
   title="La Carte – La Pêcherie | Port d'Hourtin, Gironde"
@@ -38,6 +39,9 @@ import menu from '../data/menu.json';
       <p class="text-gray-500">Port d'Hourtin, Gironde · <span class="text-green-600 font-medium">🌿 = option végétarienne</span></p>
       <p class="text-gray-400 text-sm mt-1">Tous nos prix sont TTC · Liste des allergènes disponible sur demande</p>
     </div>
+
+    <!-- Formule du midi -->
+    <FormuleMidi />
 
     <!-- Sections -->
     {menu.sections.map(section => (
