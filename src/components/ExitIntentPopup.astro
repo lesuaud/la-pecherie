@@ -114,19 +114,15 @@
       }
     });
 
-    // Mobile : interception du bouton retour (pushState + popstate)
-    // On mémorise le pathname au moment de l'init pour détecter une vraie navigation hors page.
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-      var trapPathname = location.pathname;
+    // Mobile : interception du bouton retour — un seul piège, jamais reconduit.
+    if (/Mobi|Android/i.test(navigator.userAgent) && !alreadyShown()) {
+      // Pose le piège UNE seule fois.
       history.pushState(null, '', location.href);
-      window.addEventListener('popstate', function() {
-        // Si seul le hash a changé (même pathname), c'est un clic sur une ancre — on ignore.
-        if (location.pathname !== trapPathname) {
-          showPopup();
-          return;
-        }
-        // Même page : repose le piège pour capter un vrai retour ultérieur.
-        history.pushState(null, '', location.href);
+      window.addEventListener('popstate', function onPopstate() {
+        // Désactive immédiatement le listener pour ne plus interférer.
+        window.removeEventListener('popstate', onPopstate);
+        showPopup();
+        // Le prochain appui "retour" naviguera normalement hors de la page.
       });
     }
   }
