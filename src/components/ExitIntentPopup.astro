@@ -104,15 +104,19 @@
       if (e.key === 'Escape') hidePopup();
     });
 
-    // Desktop : souris qui sort par le haut
-    var desktopFired = false;
-    document.addEventListener('mouseleave', function(e) {
-      if (desktopFired) return;
-      if (e.clientY <= 0) {
-        desktopFired = true;
-        showPopup();
-      }
-    });
+    // Desktop uniquement (vraie souris) : souris qui sort par le haut.
+    // window.matchMedia('(pointer: fine)') exclut les appareils tactiles
+    // et évite les faux déclenchements dus aux événements souris synthétiques d'iOS Safari.
+    if (window.matchMedia('(pointer: fine)').matches) {
+      var desktopFired = false;
+      document.addEventListener('mouseleave', function(e) {
+        if (desktopFired) return;
+        if (e.clientY <= 0) {
+          desktopFired = true;
+          showPopup();
+        }
+      });
+    }
 
     // Mobile : interception du bouton retour — un seul piège, jamais reconduit.
     if (/Mobi|Android/i.test(navigator.userAgent) && !alreadyShown()) {
