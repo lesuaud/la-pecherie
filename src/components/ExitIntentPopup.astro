@@ -1,0 +1,133 @@
+---
+---
+<!-- Exit-intent popup — s'affiche une seule fois par session -->
+<div
+  id="exit-popup-overlay"
+  style="display:none; position:fixed; inset:0; background:rgba(7,41,74,0.7); z-index:9999; align-items:center; justify-content:center; padding:1rem;"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="exit-popup-title"
+>
+  <div
+    id="exit-popup-box"
+    style="background:#F6EEE0; border-radius:1.25rem; max-width:420px; width:100%; padding:2.5rem 2rem; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); text-align:center;"
+  >
+    <!-- Croix fermeture -->
+    <button
+      id="exit-popup-close"
+      aria-label="Fermer"
+      style="position:absolute; top:1rem; right:1rem; background:none; border:none; cursor:pointer; color:#0B3C5D; font-size:1.5rem; line-height:1;"
+    >✕</button>
+
+    <!-- Rose des vents décorative -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 100 100" style="margin:0 auto 1.25rem;" aria-hidden="true">
+      <polygon points="50,4 55,44 96,50 55,56 50,96 45,56 4,50 45,44" fill="#10A0D0"/>
+      <polygon points="50,15 54,46 85,50 54,54 50,85 46,54 15,50 46,46" fill="#90D0F0" opacity="0.55"/>
+      <circle cx="50" cy="50" r="6" fill="#10A0D0"/>
+      <circle cx="50" cy="50" r="3" fill="white"/>
+    </svg>
+
+    <h2
+      id="exit-popup-title"
+      style="font-family:'Playfair Display',Georgia,serif; color:#0B3C5D; font-size:1.6rem; font-weight:700; margin-bottom:0.75rem; line-height:1.2;"
+    >Vous partez déjà ?</h2>
+
+    <p style="color:#4B5563; font-size:0.95rem; line-height:1.6; margin-bottom:1.75rem;">
+      Êtes-vous sûr de ne pas vouloir réserver votre table au port d'Hourtin ?
+    </p>
+
+    <a
+      href="/#reservation"
+      id="exit-popup-cta"
+      style="display:inline-block; background:#E2603F; color:white; font-weight:700; padding:0.9rem 2rem; border-radius:9999px; font-size:1rem; text-decoration:none; transition:background 0.2s;"
+      onmouseover="this.style.background='#c9502f'"
+      onmouseout="this.style.background='#E2603F'"
+    >
+      📞 Réserver une table
+    </a>
+
+    <p style="margin-top:1rem;">
+      <button
+        id="exit-popup-dismiss"
+        style="background:none; border:none; color:#9CA3AF; font-size:0.8rem; cursor:pointer; text-decoration:underline;"
+      >Non merci, je pars</button>
+    </p>
+  </div>
+</div>
+
+<script is:inline>
+(function () {
+  var STORAGE_KEY = 'lapecherie_exit_shown';
+
+  function alreadyShown() {
+    try { return sessionStorage.getItem(STORAGE_KEY) === '1'; } catch(e) { return false; }
+  }
+  function markShown() {
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+  }
+
+  function showPopup() {
+    if (alreadyShown()) return;
+    markShown();
+    var overlay = document.getElementById('exit-popup-overlay');
+    if (!overlay) return;
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hidePopup() {
+    var overlay = document.getElementById('exit-popup-overlay');
+    if (!overlay) return;
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function init() {
+    var overlay  = document.getElementById('exit-popup-overlay');
+    var closeBtn = document.getElementById('exit-popup-close');
+    var dismiss  = document.getElementById('exit-popup-dismiss');
+    var cta      = document.getElementById('exit-popup-cta');
+    var box      = document.getElementById('exit-popup-box');
+
+    if (!overlay) return;
+
+    // Fermeture : croix, "Non merci", clic overlay
+    if (closeBtn) closeBtn.addEventListener('click', hidePopup);
+    if (dismiss)  dismiss.addEventListener('click', hidePopup);
+    if (cta)      cta.addEventListener('click', hidePopup);
+    overlay.addEventListener('click', function(e) {
+      if (!box.contains(e.target)) hidePopup();
+    });
+
+    // Fermeture clavier (Échap)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') hidePopup();
+    });
+
+    // Desktop : souris qui sort par le haut
+    var desktopFired = false;
+    document.addEventListener('mouseleave', function(e) {
+      if (desktopFired) return;
+      if (e.clientY <= 0) {
+        desktopFired = true;
+        showPopup();
+      }
+    });
+
+    // Mobile : interception du bouton retour (pushState + popstate)
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      history.pushState(null, '', location.href);
+      window.addEventListener('popstate', function() {
+        showPopup();
+        history.pushState(null, '', location.href); // repousse l'état pour catcher un 2e retour
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>

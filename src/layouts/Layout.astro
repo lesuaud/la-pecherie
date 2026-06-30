@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
 
 export interface Props {
   title?: string;
@@ -110,5 +111,6 @@ const {
 </head>
 <body class="bg-white text-gray-800 antialiased">
   <slot />
+  <ExitIntentPopup />
 </body>
 </html>
